@@ -13,9 +13,10 @@ provider "digitalocean" {
   token = "${var.digitalocean_token}"
 }
 
-resource "digitalocean_droplet" "node1" {
+resource "digitalocean_droplet" "etcd" {
+  count  = 1
   image  = "ubuntu-18-04-x64"
-  name   = "node1"
+  name   = "ectd-${count.index}"
   region = "lon1"
   size   = "s-1vcpu-1gb"
   ssh_keys = ["${digitalocean_ssh_key.default.fingerprint}"]
@@ -26,6 +27,6 @@ resource "digitalocean_ssh_key" "default" {
   public_key = "${file("~/.ssh/id_rsa.pub")}"
 }
 
-output "ipv4_address" {
-  value = "${digitalocean_droplet.node1.ipv4_address}"
-}
+#output "ipv4_address" {
+#  value = "${digitalocean_droplet.node1.ipv4_address}"
+#}
