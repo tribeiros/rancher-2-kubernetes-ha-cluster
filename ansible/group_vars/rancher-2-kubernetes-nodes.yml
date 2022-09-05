@@ -1,0 +1,29 @@
+---
+docker_package: "docker-ce=17.03.2~ce-0~ubunut-xenial"
+
+users:
+  - username: rancherk8s
+    name: Rancher 2 Kubernetes
+    password: $6$HflQKUqYfISh$aSK43P7JFFalEM4E74F9jDL1ADIgu31p2SCm02GfngW5t6lvuxk.NhR2jYzEU0EgIl8JSMnnXPVmuXqGzb1td1
+    groups: ['docker']
+    uid: 1001
+    ssh_key:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDVEU1+rrsC2GQNsM1n0sGENF5M75Y/fLmnd92uAPb6OXiBC84xS1oObhpJQgkivyu4H2D9vr2qx2f9MOTPtLf/Q+k5tHyFZwuAZcKVdp0Skyb+2Y5+Woc0Iq3UabzH/hIAt4CExGGEfbn6zYzJu2f2tsznbdORoF0yBP3zrAKRztJrS0AHFqOVs2W6GDU7xbGHxhxRLvuHS7Io8KQg7vRipYSIa/NbIqWXUOu85V8BGvXN3ipAZOMeFfRv44Y1u7+R6zkILKYIynI6FwC40Mw+EHSjj28wKeAWwTEryRX0Tn1Nf4wwsjsEE68P/DoisxdL5CJUzRKwAOzO8ay6QIh3JDKYNdtWZrFaVf4vDkxNxnlOGjDg02sUHB8ZcXGLZUk/MTxh/v5tlRB0GtwwIYDUuk1+up4ziXCejqH7uptJfcolOhH0Wu85gxPl6S+0s/UjXWoPNbI6frZ0HAuzOLiDd6NP/GrSgscp6VuiC6f4biM9eQM+S/Vc/VkocOTctqU= trds@macmini"
+  
+firewall_allowed_tcp_ports:
+  - "22"
+  - "80"
+  - "443"
+  - "2376"
+  - "2379"
+  - "2380"
+  - "6443"
+  - "9099"
+  - "10250"
+  - "10254"
+firewall_allowed_udp_ports:
+  - "8472"
+firewall_additional_rules:
+  - "iptables -A INPUT -p tcp --match multiport --dports 30000:32767 -j ACCEPT"
+  - "iptables -A INPUT -p udp --match multiport --dports 30000:32767 -j ACCEPT"
+  

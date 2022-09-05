@@ -1,7 +1,0 @@
----
-# tasks file for codereviewvideos.common
-- name: install htop
-  apt:
-    name: htop
-    update_cache: yes
-    state: present
