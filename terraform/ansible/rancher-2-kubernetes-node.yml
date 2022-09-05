@@ -1,5 +1,0 @@
----
-- name: Rancher 2 Kubernetes Nodes
-  hosts: rancher-2-kubernetes-nodes
-  roles:
-    - 

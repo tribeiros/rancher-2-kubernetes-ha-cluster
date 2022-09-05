@@ -27,6 +27,6 @@ resource "digitalocean_ssh_key" "default" {
   public_key = "${file("~/.ssh/id_rsa.pub")}"
 }
 
-#output "ipv4_address" {
-#  value = "${digitalocean_droplet.node1.ipv4_address}"
-#}
+output "ipv4_address" {
+  value = "${digitalocean_droplet.etcd.*.ipv4_address}"
+}
