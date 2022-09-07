@@ -1,5 +1,15 @@
 ---
 - src: ingleplattform-eng.users
   version: v1.2.5
+
 - src: geerlingguy.docker
   version: 2.5.2
+
+- src: geerlingguy.firewall
+  version: 2.4.1
+
+- src: nginx.nginx
+  version: 0.11.0
+
+- src: jdauphant.nginx
+  version: v2.21.2

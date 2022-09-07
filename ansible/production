@@ -1,4 +1,8 @@
 etcd-0 ansible_host=46.101.35.114 ansible_python_interpreter=/usr/bin/python3
+loadBalancer ansible_host=46.101.19.182 ansible_python_interpreter=/usr/bin/python3 
 
 [rancher-2-kubernetes-nodes]
 etcd-0
+
+[rancher-2-load-balancers]
+loadBalancer
